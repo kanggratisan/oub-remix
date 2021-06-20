@@ -166,9 +166,9 @@ async def notifon(non_event):
     await non_event.edit("`Notifications from unapproved PM's unmuted!`")
 
 
-@register(outgoing=True, pattern="^.approve$")
+@register(outgoing=True, pattern="^.allow$")
 async def approvepm(apprvpm):
-    """ For .approve command, give someone the permissions to PM you. """
+    """ For .allow command, give someone the permissions to PM you. """
     try:
         from userbot.modules.sql_helper.pm_permit_sql import approve
     except AttributeError:
@@ -207,7 +207,7 @@ async def approvepm(apprvpm):
         )
 
 
-@register(outgoing=True, pattern="^.disapprove$")
+@register(outgoing=True, pattern="^.unallow$")
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -422,7 +422,7 @@ async def hehehe(event):
     chat = await event.get_chat()
     if event.is_private:
         if not pm_permit_sql.is_approved(chat.id):
-            pm_permit_sql.approve(chat.id, "supreme lord ehehe")
+            pm_permit_sql.allow(chat.id, "supreme lord ehehe")
             await bot.send_message(chat, "`This inbox has been blessed by my master. Consider yourself lucky.`\n**Increased Stability and Karma** (づ￣ ³￣)づ")
 
 CMD_HELP.update({
