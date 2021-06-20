@@ -26,7 +26,7 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = (
-    "`HeY! Please don't spam. Wait for my master's approval 🙃\nMessage remaining:1 \n\n`")
+    "`HeY! Please don't spam. Wait for my master's approval 🙃\n`")
 # =================================================================
 
 NO_PM_LOG_USERS = []
@@ -428,9 +428,9 @@ async def hehehe(event):
 CMD_HELP.update({
     "pm":
     "\
-`.approve`\
+`.allow`\
 \nUsage: Approves the mentioned/replied person to PM.\
-\n\n`.disapprove`\
+\n\n`.unallow`\
 \nUsage: Disapproves the mentioned/replied person to PM.\
 \n\n`.block`\
 \nUsage: Blocks the person.\
